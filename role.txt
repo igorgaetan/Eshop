@@ -1,0 +1,20 @@
+
+
+//Etape de la definition des roles et des permissions
+
+//Dans le terminal
+composer require spatie/laravel-permission
+
+
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+php artisan migrate
+
+//On ajoute hasRole au modele User
+
+php artisan make:seeder RolesAndPermissionsSeeder
+
+
+//On rempli le seeder, ensuite on fait le seeding
+
+php artisan db:seed --class=RolesAndPermissionsSeeder
+
